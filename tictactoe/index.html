@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <div class="game-container">
+        <h1>Tic Tac Toe</h1>
+        
+        <div class="setup-form" id="setup">
+            <div class="player-inputs">
+                <div class="player-input">
+                    <label for="player1">Player 1 (X):</label>
+                    <input type="text" id="player1" placeholder="Enter name" value="Player 1">
+                </div>
+                <div class="player-input">
+                    <label for="player2">Player 2 (O):</label>
+                    <input type="text" id="player2" placeholder="Enter name" value="Player 2">
+                </div>
+            </div>
+            <button class="start-btn" id="startBtn">Start Game</button>
+        </div>
+
+        <div class="game-area hidden" id="gameArea">
+            <div class="game-info">
+                <div>Current Turn: <span class="current-player" id="currentPlayer"></span></div>
+            </div>
+
+            <div class="game-board" id="gameBoard">
+                <button class="cell" data-index="0"></button>
+                <button class="cell" data-index="1"></button>
+                <button class="cell" data-index="2"></button>
+                <button class="cell" data-index="3"></button>
+                <button class="cell" data-index="4"></button>
+                <button class="cell" data-index="5"></button>
+                <button class="cell" data-index="6"></button>
+                <button class="cell" data-index="7"></button>
+                <button class="cell" data-index="8"></button>
+            </div>
+
+            <div class="game-result" id="gameResult"></div>
+            
+            <div class="controls">
+                <button class="restart-btn" id="restartBtn">New Game</button>
+            </div>
+
+            <div class="game-stats" id="gameStats"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
