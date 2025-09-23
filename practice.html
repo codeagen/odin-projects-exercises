@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script>
+      // document.body.style.padding("16px")
+      
+      const now = new Date()
+
+      const h1 = document.createElement('h1');
+      h1.innerText = `${now.getHours()}:${now.getMinutes()}`
+
+      document.body.append("I love you");
+      document.body.appendChild(h1)
+
+      // -------------------------------------------------------------//
+      // const input = document.createElement('input')
+      // input.placeholder = "TO DO"
+
+      // document.body.appendChild(input)
+
+      // const button = document.createElement('button')
+      // button.innerText = "ADD"
+      // document.body.appendChild(button)
+
+      // button.addEventListener('click',()=>{
+      //   const div = document.createElement('div')
+      //   div.innerText = input.value
+      //   document.body.appendChild(div)
+      //   input.value = ''
+      // })
+
+      // ------------------------------------------------------------------------//
+       
+      const form = document.createElement('form')
+      document.body.appendChild(form)
+
+      const input = document.createElement('input')
+      input.placeholder = "To Do"
+      form.appendChild(input)
+      
+
+      const button = document.createElement('button')
+      button.innerText = "Add"
+      button.role = "ADD"
+      form.appendChild(button)
+
+      const ul = document.createElement('ul')
+      document.body.appendChild(ul)
+
+      const remove = el => {
+        el.remove()
+      }
+
+      form.onsubmit = (event) => {
+        event.preventDefault()
+        const li = document.createElement('li')
+        ul.appendChild(li)
+        li.innerText = input.value
+        li.onclick = remove.bind(null,li)
+        input.value = ""
+      }
+
+
+    </script>
+  </body>
+</html>

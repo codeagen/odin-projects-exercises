@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast</h1>
+        
+        <form class="search-form" id="weatherForm">
+            <input 
+                type="text" 
+                class="location-input" 
+                id="locationInput" 
+                placeholder="Enter city name (e.g., New York, London)" 
+                required
+            >
+            <button type="submit" class="search-btn" id="searchBtn">
+                Get Weather
+            </button>
+            <div class="unit-toggle">
+                <button type="button" class="toggle-btn active" id="fahrenheitBtn">°F</button>
+                <button type="button" class="toggle-btn" id="celsiusBtn">°C</button>
+            </div>
+        </form>
+
+        <div class="loading" id="loading">
+            <div class="spinner"></div>
+            <p>Fetching weather data</p>
+        </div>
+
+        <div class="error" id="error"></div>
+
+        <div class="weather-display" id="weatherDisplay">
+            <div class="current-weather">
+                <div class="location-name" id="locationName"></div>
+                <div class="current-temp" id="currentTemp"></div>
+                <div class="weather-condition" id="weatherCondition"></div>
+                
+                <div class="weather-details">
+                    <div class="detail-item">
+                        <div class="detail-label">Feels Like</div>
+                        <div class="detail-value" id="feelsLike"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Humidity</div>
+                        <div class="detail-value" id="humidity"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">Wind Speed</div>
+                        <div class="detail-value" id="windSpeed"></div>
+                    </div>
+                    <div class="detail-item">
+                        <div class="detail-label">UV Index</div>
+                        <div class="detail-value" id="uvIndex"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="forecast">
+                <div class="forecast-title">7-Day Forecast</div>
+                <div class="forecast-grid" id="forecastGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
